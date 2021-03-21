@@ -1,3 +1,6 @@
+## A simple demo SpringBoot application deployment process to Heroku using Hibernate JPA Implementation.
+### It's here mostly for me to have it at hand, but I thought it might help somebody else as well.
+
 Navigate to folder containing Spring Application. Tip: Create it with https://start.spring.io/. Set Java version to 11
 and check if you have the same version of java with ```java -version``` in terminal, otherwise it won't work.
 
@@ -37,7 +40,7 @@ In terminal:
 If you want to rename your app, you can use:
 
 ```shell
-> heroku apps:rename <new-name> # (works only if in current app repo, else must supply app name, check Heroku documentation) 
+> heroku apps:rename <new-name> # (works only if in current app repo, else you must supply the app name -check Heroku documentation) 
 ```
 
 Go to Heroku site, and add postgres addon to your app from resources tab of your app, or do it from the console. You can
@@ -47,7 +50,7 @@ check if the addon is added with:
 > heroku addons
 ```
 
-Add Controller, Model, Repository, and Service classes.
+Add Controller, Model, Repository and Service classes.
 
 IMPORTANT!
 Check the ones provided in this project to see how Heroku interacts with them.
