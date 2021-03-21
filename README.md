@@ -70,19 +70,14 @@ If you're locally on another branch than master, use:
 ```
 
 Heroku doesn't create tables for you even if you use JPA because it uses a SimpleDataSource from what I understood. \
-I couldn't make them using heroku pg:psql, but I succeeded using pgAdmin, like this: \
-Go to your heroku's app resources on the site, select heroku Postgres. \
-On the site that you're redirected to go to Settings and then on Database credentials click view credentials. \
-Go to pgAdmin and create a new server. \
-For Host name/address use Host from your heroku Postgres credentials \
-For maintenance database use Database from your heroku Postgres credentials \
-Same for user and password. 
 
-If connected successfully, you should see a bunch of databases. \
-Use Ctrl+F to search for your database name from Postgres. \
-Create a new table with the same table name used in your Model class \
-Create columns using the same column name used  in your model class
+```shell
+> heroku pg:psql
+your-app-name::DATABASE=> CREATE TABLE demo (id uuid, column_name VARCHAR NOT NULL, PRIMARY KEY (id) ); 
+#IMPORTANT! Use the same column name that you used in your model. Mine is actually column_name.
+```
 
+You can check your database connection with https://www.postman.com/ \
 When making an HTTP Request, use the Java variable name set in the Model class. (In my case is 'name') Ex.: for a POST Request:
 
 ```https://<your-app-name>.herokuapp.com/api/<path-name>```   NOTE: /api/<path-name> is our path from the ```ControllerClass```
@@ -108,5 +103,3 @@ Useful commands:
 #---Linux shell
 > heroku config | grep HEROKU_POSTGRESQL
 ```
-
-
