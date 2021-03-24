@@ -7,15 +7,12 @@ import org.hibernate.annotations.Type;
 import javax.persistence.*;
 import java.util.UUID;
 
-@Getter
-@Setter
-@ToString
+
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode
 @Entity
 @Table(name = "demo")
-public class DemoModel {
+public @Data class DemoModel {
 
     @Id
     @Type(type = "pg-uuid")
