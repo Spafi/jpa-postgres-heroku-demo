@@ -15,9 +15,9 @@ import java.util.UUID;
 public @Data class DemoModel {
 
     @Id
-    @Type(type = "pg-uuid")
+    @Type(type = "pg-uuid")  // To convert Java UUID to PostgreSQL UUID
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id = UUID.randomUUID();
+    private UUID id;
 
     @Column(name = "column_name")  // Use this for column name in pgAdmin
     private String name;  // Use this for HTTP Requests
