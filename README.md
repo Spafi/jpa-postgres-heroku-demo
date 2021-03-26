@@ -86,7 +86,7 @@ If you're locally on another branch than master, use:
 > git push heroku <local-branch-name>:master
 ```
 
-You can check your database connection with https://www.postman.com/ \
+You can check your endpoints with https://www.postman.com/ \
 When making an HTTP Request, use the Java variable name set in the Model class. (In my case is 'name') Ex.: for a POST
 Request:
 
