@@ -9,23 +9,19 @@ from https://start.spring.io/)
 
 You should use Spring Boot DevTools dependency for LiveReload and Fast restart.
 
-You need also to put manually this dependency after you open your project:
-
-https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient/4.5.2
-
 Create a  ```system.properties``` file in root folder of the project with ```java.runtime.version=11``` inside it. Java
 version must match java version in pom.xml
 
 Add the following lines in src/main/resources/application.properties:
 
 ```
-# You can get all the variables using the command that gets the full database url from the bottom of this page
-# Or by going to your app on Heroku -> Resources -> Heroku Postgres -> Settings -> View Credentials
 spring.jpa.hibernate.ddl-auto=create-drop     // create-drop used in development, consult documentation for proper value
 spring.datasource.url=postgres://username:password@host:port/database 
 spring.datasource.username=username
 spring.datasource.password=password
 ```
+You can get all the variables (username, password and url) using the command that gets the full database url from the bottom of this page
+Or by going to your app on Heroku -> Resources -> Heroku Postgres -> Settings -> View Credentials
 
 In terminal:
 
