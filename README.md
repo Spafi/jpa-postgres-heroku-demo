@@ -2,12 +2,24 @@
 ### It's here mostly for me to have it at hand, but I thought it might help somebody else as well.
 
 Navigate to folder containing Spring Application. Tip: Create it with https://start.spring.io/. Set Java version to 11
-and check if you have the same version of java with ```java -version``` in terminal, otherwise it won't work.
+and check if you have the same version of java with ```java -version``` in terminal.
 
-You must use following dependencies: Spring Web, Lombok, PostgreSQL Driver, Spring Data JPA. (Those can be added
+Also, check that `JAVA_HOME` environment variable is set to the root folder of Java 11 JDK and you have it added to the Path.
+
+Linux shell     
+```shell 
+> echo $JAVA_PATH # to check if it's set correctly. For setting it, consult Google as I'm using Windows
+```
+Windows
+
+Start Menu > Search for "Edit the system environment variables > Environment variables > 
+  In the System variables list (NOT THE USER VARIABLES), check if `JAVA_HOME` is set to your JDK 11 root folder (if you don't have a JDK 11, download one) and point this variable to the root folder of the downloaded JDK.
+  Then, click on `Path` variable (ALSO IN SYSTEM VARIABLES LIST) > Edit, and check if you have this exact line `%JAVA_HOME%\bin` (this points to the bin folder of the above set environment variable). If not, add it to the Path.
+
+You must use following dependencies: Spring Web, PostgreSQL Driver, Spring Data JPA. (Those can be added
 from https://start.spring.io/)
 
-You should use Spring Boot DevTools dependency for LiveReload and Fast restart.
+You should use Spring Boot DevTools dependency for LiveReload and Fast restart and Lombok for boilerplate code reduction (It is used throughout this project and you can check it out here: https://projectlombok.org/).
 
 Create a  ```system.properties``` file in root folder of the project with ```java.runtime.version=11``` inside it. Java
 version must match java version in pom.xml
